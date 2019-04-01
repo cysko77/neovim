@@ -4,6 +4,9 @@ let g:easytags_events         = ['BufWritePost'] " To update & highlight tags af
 let g:easytags_auto_highlight = 0                " Disable the highlighting, too slow
 let g:easytags_async          = 1                " Enable the asynchronous update
 
+" completion CTAGS
+nnoremap  <Leader>; <C-]>
+
 " Option for making phpcomplete plugin work correctly
 " --append=yes : Tags will be appended to the file, avoid to have multiple !_TAG lines
 " --memory=-1 : otherwise the recursive mode doesn't work correctly

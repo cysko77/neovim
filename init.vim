@@ -5,7 +5,9 @@ let s:my_vim_dir = fnamemodify(resolve(expand('<sfile>')), ':p:h')
 execute 'set runtimepath^=' . s:my_vim_dir
 execute 'set runtimepath+=' . s:my_vim_dir . '/after'
 let &packpath = &runtimepath
+
 " }}}
+
 
 " Global {{{
 let mapleader = ','
@@ -42,6 +44,8 @@ execute 'set runtimepath+=' . s:my_vim_dir . '/templates'
 
 if has('termguicolors')
   set termguicolors
+  colorscheme gruvbox
+  let g:airline_theme='gruvbox'
 endif
 
 if has('nvim')
@@ -56,11 +60,11 @@ endif
 if exists('*minpac#init')
   call minpac#init()
 
-  call minpac#add('k-takata/minpac', {'type': 'opt', 'branch': 'master'})
+  call minpac#add('k-takata/minpac', {'type': 'opt'})
 
   call minpac#add('chriskempson/base16-vim')
 
-  call minpac#add('wikitopian/hardmode')
+  "  call minpac#add('wikitopian/hardmode')
 
   call minpac#add('vim-airline/vim-airline')
   call minpac#add('vim-airline/vim-airline-themes')
@@ -78,12 +82,12 @@ if exists('*minpac#init')
   call minpac#add('tpope/vim-dispatch')
   call minpac#add('tpope/vim-projectionist')
   call minpac#add('tpope/vim-eunuch')
-
+call minpac#add('wsdjeg/FlyGrep.vim')
   call minpac#add('w0rp/ale')
 
   call minpac#add('easymotion/vim-easymotion')
 
-  call minpac#add('kien/ctrlp.vim')
+  " call minpac#add('kien/ctrlp.vim')
 
   call minpac#add('skywind3000/asyncrun.vim')
 
@@ -97,7 +101,7 @@ if exists('*minpac#init')
   " call minpac#add('shawncplus/phpcomplete.vim')
   call minpac#add('phpactor/phpactor', {'do': '!composer install --no-dev -o'})
   call minpac#add('ncm2/ncm2')
-    call minpac#add('roxma/nvim-yarp')
+  call minpac#add('roxma/nvim-yarp')
   call minpac#add('ncm2/ncm2-path')
   " call minpac#add('ncm2/ncm2-tmux')
   " call minpac#add('wellle/tmux-complete')
@@ -113,8 +117,8 @@ if exists('*minpac#init')
   call minpac#add('othree/csscomplete.vim')
 
   call minpac#add('garbas/vim-snipmate')
-    call minpac#add('tomtom/tlib_vim')
-    call minpac#add('marcweber/vim-addon-mw-utils')
+  call minpac#add('tomtom/tlib_vim')
+  call minpac#add('marcweber/vim-addon-mw-utils')
 
   " call minpac#add('lvht/phpcd.vim', {'type': 'opt', 'do': '!composer install --no-dev -o'})
   " augroup loadphpcd
@@ -128,14 +132,14 @@ if exists('*minpac#init')
   call minpac#add('SirVer/ultisnips')
   call minpac#add('honza/vim-snippets')
   call minpac#add('elythyr/pdv', {'branch': 'improvements'})
-    call minpac#add('tobyS/vmustache')
+  call minpac#add('tobyS/vmustache')
 
   call minpac#add('sniphpets/sniphpets-common')
   call minpac#add('sniphpets/sniphpets-symfony')
   call minpac#add('sniphpets/sniphpets-phpunit')
   call minpac#add('sniphpets/sniphpets-doctrine')
   call minpac#add('sniphpets/sniphpets-postfix-codes')
-    call minpac#add('sniphpets/sniphpets')
+  call minpac#add('sniphpets/sniphpets')
 
   call minpac#add('janko-m/vim-test')
   call minpac#add('benmills/vimux')
@@ -161,8 +165,10 @@ if exists('*minpac#init')
   " call minpac#add('elythyr/vim-twig')
   call minpac#add('elythyr/vim-cleanfold')
   call minpac#add('elythyr/php-foldexpr.vim')
-
+  
+  call minpac#add('morhetz/gruvbox')
   call minpac#add('lumiliet/vim-twig')
+  call minpac#add('git://github.com/majutsushi/tagbar')
 endif
 
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update()
@@ -172,7 +178,7 @@ command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
 
 " Autoload all config files
 for s:config_file in split(glob(s:my_vim_dir . '/config/*.vim'), "\n")
-    execute 'source ' s:config_file
+  execute 'source ' s:config_file
 endfor
 
 " Abbreviations {{{
