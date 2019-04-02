@@ -87,7 +87,7 @@ call minpac#add('wsdjeg/FlyGrep.vim')
 
   call minpac#add('easymotion/vim-easymotion')
 
-  " call minpac#add('kien/ctrlp.vim')
+   call minpac#add('kien/ctrlp.vim')
 
   call minpac#add('skywind3000/asyncrun.vim')
 
