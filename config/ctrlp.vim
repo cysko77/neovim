@@ -1,5 +1,5 @@
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|vendor|node\_modules|var)$',
+    \ 'dir':  '\v[\/](\.(git|hg|svn)|_site|vendor|node_modules|var)$',
     \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
 
